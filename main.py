@@ -8,7 +8,7 @@ from aiogram.utils import executor
 from PIL import Image
 
 # ==========================================
-# 1. КОНФИГУРАЦИЯ
+# 1. config
 # ==========================================
 API_TOKEN = ''  # <-- Вставь сюда свой токен!
 MODEL_PATH = 'flower_model.keras'  # Файл должен лежать в этой же папке
@@ -44,7 +44,7 @@ LABELS_RU = [
     'кампсис (трубчатая лиана)', 'беламканда (ежевичная лилия)'
 ]
 # ==========================================
-# 2. ЗАГРУЗКА МОДЕЛИ
+# 2. loading
 # ==========================================
 logging.basicConfig(level=logging.INFO)
 
@@ -60,10 +60,6 @@ print("✅ Модель готова!")
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-
-# ==========================================
-# 3. ЛОГИКА БОТА
-# ==========================================
 
 @dp.message_handler(commands=['start'])
 async def start_cmd(message: types.Message):
